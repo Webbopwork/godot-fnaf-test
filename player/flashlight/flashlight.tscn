@@ -1,0 +1,67 @@
+[gd_scene load_steps=8 format=3 uid="uid://n1cq2aafghja"]
+
+[ext_resource type="Script" path="res://player/flashlight/flashlight_toggle.gd" id="1_dfcai"]
+[ext_resource type="Material" uid="uid://c2raek4c1b8tb" path="res://player/flashlight/flashlight_material_3d.tres" id="1_hk5aj"]
+[ext_resource type="Material" uid="uid://dpdp7bo72jy6q" path="res://player/flashlight/flashlight_button_material_3d.tres" id="3_v6y67"]
+[ext_resource type="AudioStream" uid="uid://b1mc1atc6d3x5" path="res://player/flashlight/sounds/flashlight-clicking-on-105809.mp3" id="4_hujss"]
+[ext_resource type="Material" uid="uid://dili3rff5rio8" path="res://player/flashlight/flashlight_cover_material_3d.tres" id="4_scekv"]
+[ext_resource type="AudioStream" uid="uid://52s0p7jnyke0" path="res://player/flashlight/sounds/picking-up-audio-editor-output.wav" id="6_fp23f"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_0adq4"]
+
+[node name="Flashlight" type="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.604198, -0.5, -0.80464)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_dfcai")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.25)
+visible = false
+light_energy = 0.75
+light_specular = 0.25
+shadow_enabled = true
+distance_fade_enabled = true
+spot_range = 70.0
+spot_attenuation = 0.5
+spot_angle_attenuation = 0.75
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, -1.09278e-08, 0.25, 0, -0.25, -1.09278e-08, 0, 0, 0)
+sides = 14
+material = ExtResource("1_hk5aj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, -1.09278e-08, 0.25, 0, -0.25, -1.09278e-08, 0, 0, 0)
+shape = SubResource("CylinderShape3D_0adq4")
+
+[node name="Button" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.033, -0.127)
+transparency = 0.2
+operation = 2
+sides = 15
+material = ExtResource("3_v6y67")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Button"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.995913, 0)
+light_color = Color(1, 0.14902, 0.14902, 1)
+light_energy = 0.2
+light_specular = 0.25
+omni_range = 1.0
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Button"]
+stream = ExtResource("4_hujss")
+volume_db = -1.5
+
+[node name="Cover" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.225, 0, 0, 0, -4.37114e-10, -0.225, 0, 0.01, -9.83506e-09, 0, 0, -0.24849)
+transparency = 0.25
+operation = 2
+sides = 15
+material = ExtResource("4_scekv")
+
+[node name="SwitchStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.033, 0.0382091)
+stream = ExtResource("6_fp23f")
+volume_db = -3.0
+max_db = 1.0

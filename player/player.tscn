@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://bfku1eoamok3q"]
+
+[ext_resource type="Script" path="res://player/player_movement.gd" id="1_mhhej"]
+[ext_resource type="PackedScene" uid="uid://n1cq2aafghja" path="res://player/flashlight/flashlight.tscn" id="2_537u3"]
+[ext_resource type="AudioStream" uid="uid://bk7r263nr41mf" path="res://player/sounds/edited-running-sound-short.wav" id="3_v1qwe"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bdj4w"]
+
+[node name="Player" type="CharacterBody3D"]
+axis_lock_linear_y = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+script = ExtResource("1_mhhej")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_bdj4w")
+disabled = true
+
+[node name="RunningAudioPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+stream = ExtResource("3_v1qwe")
+volume_db = -4.0
+max_db = -1.0
+max_polyphony = 2
+panning_strength = 2.0
+
+[node name="CameraSet" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="Flashlight" parent="CameraSet" instance=ExtResource("2_537u3")]
+transform = Transform3D(0.983255, 0, 0.182236, 0, 1, 0, -0.182236, 0, 0.983255, 0.568325, -0.61805, -0.80464)
+
+[node name="Camera3D" type="Camera3D" parent="CameraSet"]
+current = true
+
+[node name="AudioListener3D" type="AudioListener3D" parent="CameraSet"]
+current = true
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
