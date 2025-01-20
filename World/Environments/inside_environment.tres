@@ -1,0 +1,16 @@
+[gd_resource type="Environment" format=3 uid="uid://c8sg83dax3wop"]
+
+[resource]
+background_mode = 1
+background_energy_multiplier = 0.05
+tonemap_mode = 3
+tonemap_exposure = 2.0
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+sdfgi_read_sky_light = false
+sdfgi_bounce_feedback = 0.8
+sdfgi_cascades = 8
+glow_enabled = true

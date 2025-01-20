@@ -1,0 +1,58 @@
+[gd_resource type="MeshLibrary" load_steps=8 format=3 uid="uid://dsvmyjrdmi02b"]
+
+[ext_resource type="Material" uid="uid://dqswo0bn7tc4g" path="res://objects/materials/floor_material_3d.tres" id="1_sigp7"]
+[ext_resource type="Material" uid="uid://cv4u2dbdcd2ht" path="res://objects/materials/red_wall_material_3d.tres" id="2_27s2m"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_je70y"]
+material = ExtResource("1_sigp7")
+
+[sub_resource type="BoxMesh" id="BoxMesh_42fhr"]
+material = ExtResource("2_27s2m")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_hk224"]
+material = ExtResource("1_sigp7")
+size = Vector2(3, 3)
+center_offset = Vector3(0, 1.5, 0)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1tuy7"]
+material = ExtResource("2_27s2m")
+size = Vector2(3, 3)
+center_offset = Vector3(1.5, 0, 0)
+orientation = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_lrb5x"]
+material = ExtResource("1_sigp7")
+size = Vector2(3, 3)
+center_offset = Vector3(0, 1.5, 0)
+
+[resource]
+item/0/name = "Floor"
+item/0/mesh = SubResource("BoxMesh_je70y")
+item/0/mesh_transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+item/0/shapes = []
+item/0/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/0/navigation_layers = 1
+item/1/name = "Wall"
+item/1/mesh = SubResource("BoxMesh_42fhr")
+item/1/mesh_transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+item/1/shapes = []
+item/1/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/1/navigation_layers = 1
+item/2/name = "Plane floor"
+item/2/mesh = SubResource("PlaneMesh_hk224")
+item/2/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/2/shapes = []
+item/2/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/2/navigation_layers = 1
+item/3/name = "Wall plane"
+item/3/mesh = SubResource("PlaneMesh_1tuy7")
+item/3/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/3/shapes = []
+item/3/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/3/navigation_layers = 1
+item/4/name = "Roof panel"
+item/4/mesh = SubResource("PlaneMesh_lrb5x")
+item/4/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/4/shapes = []
+item/4/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/4/navigation_layers = 1
