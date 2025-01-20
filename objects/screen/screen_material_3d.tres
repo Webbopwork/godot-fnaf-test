@@ -1,0 +1,25 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dpfjq41bfrnw5"]
+
+[resource]
+transparency = 4
+cull_mode = 2
+albedo_color = Color(0.176471, 0.611765, 0.552941, 0.694118)
+metallic = 1.0
+metallic_texture_channel = 2
+emission = Color(0.133333, 0.631373, 0.639216, 1)
+rim_enabled = true
+clearcoat_enabled = true
+clearcoat = 0.5
+anisotropy_enabled = true
+ao_enabled = true
+heightmap_enabled = true
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+subsurf_scatter_enabled = true
+subsurf_scatter_strength = 1.0
+subsurf_scatter_transmittance_enabled = true
+subsurf_scatter_transmittance_color = Color(0.568627, 1, 1, 1)
+subsurf_scatter_transmittance_boost = 1.0
+backlight_enabled = true
+backlight = Color(0.133333, 0.631373, 0.639216, 1)
