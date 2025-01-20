@@ -1,0 +1,248 @@
+[gd_scene load_steps=15 format=3 uid="uid://cdfaq4g61cw6f"]
+
+[ext_resource type="PackedScene" uid="uid://bfku1eoamok3q" path="res://player/player.tscn" id="1_d3125"]
+[ext_resource type="Material" uid="uid://cv4u2dbdcd2ht" path="res://objects/materials/red_wall_material_3d.tres" id="2_uq0a4"]
+[ext_resource type="PackedScene" uid="uid://ctwb1d3jhf6yu" path="res://objects/screen/screen.tscn" id="3_25wdj"]
+[ext_resource type="MeshLibrary" uid="uid://dsvmyjrdmi02b" path="res://World/meshlibraries/indoors_mesh_library.tres" id="3_rdd51"]
+[ext_resource type="Material" uid="uid://dqswo0bn7tc4g" path="res://objects/materials/floor_material_3d.tres" id="4_pcvlq"]
+[ext_resource type="Material" uid="uid://d2b5hqsdws8ay" path="res://objects/materials/desk_material_3d.tres" id="5_ncngb"]
+[ext_resource type="Material" uid="uid://dili3rff5rio8" path="res://player/flashlight/flashlight_cover_material_3d.tres" id="7_6rk6r"]
+[ext_resource type="Environment" uid="uid://c8sg83dax3wop" path="res://World/Environments/inside_environment.tres" id="8_apnlx"]
+[ext_resource type="PackedScene" uid="uid://cca3a56v5q24h" path="res://enemies/enemy.tscn" id="9_3k58j"]
+[ext_resource type="PackedScene" uid="uid://dcu67k78v0lps" path="res://objects/lights/roof light/roof_light.tscn" id="10_3bv84"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c5sof"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_kq7nn"]
+vertices = PackedVector3Array(-50.75, -3.802, -24, -59.5, -3.802, -24, -59.5, -3.802, -14, -59.5, -3.802, -14, -59.5, -3.802, -4, -50.75, -3.802, -4, -50.75, -3.802, -24, -59.5, -3.802, -14, -50.75, -3.802, -4, -42, -3.802, -4, -42, -3.802, -24, -33.25, -3.802, -24, -42, -3.802, -24, -42, -3.802, -4, -33.25, -3.802, -4, -24.25, -3.802, -4, -24.25, -3.802, -24, -33.25, -3.802, -24, -33.25, -3.802, -4, -22.25, -3.802, -4, -22, -3.802, -3.5, -9.5, -3.802, -3.75, -9.5, -3.802, -6.75, -9.5, -3.802, -6.75, -7.25, -3.802, -7, -7.25, -3.802, -24, -15.75, -3.802, -24, -24.25, -3.802, -4, -22.25, -3.802, -4, -9.5, -3.802, -6.75, -15.75, -3.802, -24, -24.25, -3.802, -24, -0.25, -3.802, -24, -7.25, -3.802, -24, -7.25, -3.802, -7, -0.25, -3.802, -7, -0.25, -3.802, -7, 7, -3.802, -7, 7, -3.802, -24, -0.25, -3.802, -24, 9.25, -3.802, -3.75, 22, -3.802, -3.5, 22.25, -3.802, -4, 9.25, -3.802, -6.75, 7, -3.802, -24, 7, -3.802, -7, 9.25, -3.802, -6.75, 15.5, -3.802, -24, 9.25, -3.802, -6.75, 22.25, -3.802, -4, 24.25, -3.802, -4, 24.25, -3.802, -24, 15.5, -3.802, -24, 50.5, -3.802, -4, 59.5, -3.802, -4, 59.5, -3.802, -14, 59.5, -3.802, -14, 59.5, -3.802, -24, 50.5, -3.802, -24, 50.5, -3.802, -4, 59.5, -3.802, -14, 50.5, -3.802, -24, 41.75, -3.802, -24, 41.75, -3.802, -4, 33, -3.802, -4, 41.75, -3.802, -4, 41.75, -3.802, -24, 33, -3.802, -24, 33, -3.802, -24, 24.25, -3.802, -24, 24.25, -3.802, -4, 33, -3.802, -4, -22, -3.802, 3.5, -22, -3.802, 10.75, -14.75, -3.802, 10.75, -9.25, -3.802, -3.25, -9.5, -3.802, -3.75, -22, -3.802, -3.5, -22, -3.802, 3.5, -14.75, -3.802, 10.75, -7.25, -3.802, 10.75, -7.25, -3.802, 10.75, -7.25, -3.802, -3.25, -9.25, -3.802, -3.25, 14.5, -3.802, 10.75, 22, -3.802, 10.75, 22, -3.802, 3.5, 22, -3.802, -3.5, 9.25, -3.802, -3.75, 9, -3.802, -3.25, 7, -3.802, 10.75, 14.5, -3.802, 10.75, 22, -3.802, 3.5, 9, -3.802, -3.25, 7, -3.802, -3.25, 7, -3.802, 10.75, -0.25, -3.802, -3.25, -7.25, -3.802, -3.25, -7.25, -3.802, 10.75, -0.25, -3.802, 10.75, -0.25, -3.802, 10.75, 7, -3.802, 10.75, 7, -3.802, -3.25, -0.25, -3.802, -3.25)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(5, 4, 3), PackedInt32Array(6, 10, 7), PackedInt32Array(7, 10, 8), PackedInt32Array(8, 10, 9), PackedInt32Array(14, 13, 11), PackedInt32Array(11, 13, 12), PackedInt32Array(18, 17, 15), PackedInt32Array(15, 17, 16), PackedInt32Array(20, 19, 21), PackedInt32Array(21, 19, 22), PackedInt32Array(24, 23, 25), PackedInt32Array(25, 23, 26), PackedInt32Array(28, 27, 29), PackedInt32Array(29, 27, 30), PackedInt32Array(30, 27, 31), PackedInt32Array(35, 34, 32), PackedInt32Array(32, 34, 33), PackedInt32Array(39, 38, 36), PackedInt32Array(36, 38, 37), PackedInt32Array(41, 40, 42), PackedInt32Array(42, 40, 43), PackedInt32Array(45, 44, 46), PackedInt32Array(46, 44, 47), PackedInt32Array(49, 48, 50), PackedInt32Array(50, 48, 52), PackedInt32Array(50, 52, 51), PackedInt32Array(55, 54, 53), PackedInt32Array(58, 57, 56), PackedInt32Array(59, 63, 60), PackedInt32Array(60, 63, 61), PackedInt32Array(61, 63, 62), PackedInt32Array(67, 66, 64), PackedInt32Array(64, 66, 65), PackedInt32Array(71, 70, 68), PackedInt32Array(68, 70, 69), PackedInt32Array(74, 73, 72), PackedInt32Array(76, 75, 77), PackedInt32Array(77, 75, 78), PackedInt32Array(78, 75, 79), PackedInt32Array(79, 75, 80), PackedInt32Array(83, 82, 81), PackedInt32Array(86, 85, 84), PackedInt32Array(88, 87, 89), PackedInt32Array(89, 87, 92), PackedInt32Array(89, 92, 91), PackedInt32Array(89, 91, 90), PackedInt32Array(95, 94, 93), PackedInt32Array(99, 98, 96), PackedInt32Array(96, 98, 97), PackedInt32Array(103, 102, 100), PackedInt32Array(100, 102, 101)]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tpdvo"]
+size = Vector3(15, 5, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_wltdm"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Player" parent="." node_paths=PackedStringArray("computer") instance=ExtResource("1_d3125")]
+computer = NodePath("../Computer/Screen")
+
+[node name="GridMap" type="GridMap" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.312, -0.688)
+mesh_library = ExtResource("3_rdd51")
+cell_size = Vector3(3, 3, 3)
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+metadata/_edit_lock_ = true
+
+[node name="Computer" type="StaticBody3D" parent="."]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, -3.06154)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Computer"]
+shape = SubResource("BoxShape3D_c5sof")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Computer"]
+transform = Transform3D(1.25, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Screen" parent="Computer" instance=ExtResource("3_25wdj")]
+
+[node name="Walls" type="Node3D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="Wall" type="NavigationObstacle3D" parent="Walls"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, -5.20985)
+use_3d_avoidance = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Wall"]
+transform = Transform3D(6, 0, 0, 0, 5, 0, 0, 0, 1, 0, 0, 0)
+visible = false
+shape = SubResource("BoxShape3D_c5sof")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Walls/Wall"]
+use_collision = true
+size = Vector3(6, 5, 1)
+material = ExtResource("2_uq0a4")
+
+[node name="Wall Hall" type="NavigationObstacle3D" parent="Walls"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, -26)
+use_3d_avoidance = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Wall Hall"]
+visible = false
+shape = SubResource("BoxShape3D_c5sof")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Walls/Wall Hall"]
+transform = Transform3D(40, 0, 0, 0, 5, 0, 0, 0, 1, 0, 0, 0)
+material = ExtResource("2_uq0a4")
+
+[node name="Wall Right" type="NavigationObstacle3D" parent="Walls"]
+transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, 23.7784, 0, -0.642183)
+use_3d_avoidance = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Wall Right"]
+visible = false
+shape = SubResource("BoxShape3D_c5sof")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Walls/Wall Right"]
+transform = Transform3D(6, 0, 3.55271e-15, 0, 5, 0, 0, 0, 1, -2.04434, 0, 0)
+material = ExtResource("2_uq0a4")
+
+[node name="Hall Wall Right" type="NavigationObstacle3D" parent="Walls"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 40.4, 0, -2.05)
+use_3d_avoidance = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Hall Wall Right"]
+visible = false
+shape = SubResource("BoxShape3D_c5sof")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Walls/Hall Wall Right"]
+transform = Transform3D(11.5, 0, 0, 0, 5, 0, 0, 0, 1, 0.712, 0, 0.015)
+material = ExtResource("2_uq0a4")
+
+[node name="Hall Wall Left" type="NavigationObstacle3D" parent="Walls"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -44.85, 0, -2.05)
+use_3d_avoidance = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Hall Wall Left"]
+visible = false
+shape = SubResource("BoxShape3D_c5sof")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Walls/Hall Wall Left"]
+transform = Transform3D(11.5, 0, 0, 0, 5, 0, 0, 0, 1, 0.712, 0, 0.015)
+material = ExtResource("2_uq0a4")
+
+[node name="Wall Left" type="NavigationObstacle3D" parent="Walls"]
+transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, -24, 0, -0.642)
+use_3d_avoidance = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Wall Left"]
+visible = false
+shape = SubResource("BoxShape3D_c5sof")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Walls/Wall Left"]
+transform = Transform3D(6, 0, 0, 0, 5, 0, 0, 0, 1, -2.04434, 0, 0)
+material = ExtResource("2_uq0a4")
+
+[node name="Floors" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_kq7nn")
+metadata/_edit_lock_ = true
+
+[node name="Ofiice Floor" type="StaticBody3D" parent="Floors"]
+transform = Transform3D(3, 0, 0, 0, -1.31134e-07, -3, 0, 3, -1.31134e-07, 0, -5.80168, 0.828773)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floors/Ofiice Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, -7.10543e-15, 0, 3.55271e-15, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_tpdvo")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Floors/Ofiice Floor"]
+transform = Transform3D(15, 0, 0, 0, 5, -1.06581e-14, 0, -2.84217e-14, 1, 0, 1, 0)
+use_collision = true
+material = ExtResource("4_pcvlq")
+
+[node name="Floor Halls Left" type="StaticBody3D" parent="Floors"]
+transform = Transform3D(3, 0, 0, 0, -1.31134e-07, -3, 0, 3, -1.31134e-07, -69, -8.982, -14)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floors/Floor Halls Left"]
+shape = SubResource("BoxShape3D_c5sof")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Floors/Floor Halls Left"]
+transform = Transform3D(17, 0, 0, 0, 7, -1.77636e-14, 0, 2.84217e-14, 1, 11.5, 0, -1.06)
+use_collision = true
+material = ExtResource("4_pcvlq")
+
+[node name="Floor Halls Right" type="StaticBody3D" parent="Floors"]
+transform = Transform3D(3, 0, 0, 0, -1.31134e-07, -3, 0, 3, -1.31134e-07, 0.373837, -8.982, -14)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floors/Floor Halls Right"]
+shape = SubResource("BoxShape3D_c5sof")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Floors/Floor Halls Right"]
+transform = Transform3D(17, 0, 0, 0, 7, -7.10543e-15, 0, 2.84217e-14, 1, 11.35, 0, -1.06)
+use_collision = true
+material = ExtResource("4_pcvlq")
+
+[node name="Floor Halls Middle" type="StaticBody3D" parent="Floors"]
+transform = Transform3D(3, 0, 0, 0, -1.31134e-07, -3, 0, 3, -1.31134e-07, 0, -8.982, -14)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floors/Floor Halls Middle"]
+visible = false
+shape = SubResource("BoxShape3D_c5sof")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Floors/Floor Halls Middle"]
+transform = Transform3D(6, 0, 0, 0, 7, -4.06024e-15, 0, 2.84217e-14, 1, 0, -0.518214, -1.06025)
+use_collision = true
+size = Vector3(1, 0.848673, 1)
+material = ExtResource("4_pcvlq")
+
+[node name="Desk" type="StaticBody3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 0, -0.862962, -2.46543)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Desk"]
+visible = false
+shape = SubResource("BoxShape3D_c5sof")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Desk"]
+transform = Transform3D(7, 0, 0, 0, 5, 0, 0, 0, 0.75, 0, 0, -0.111012)
+material_override = ExtResource("5_ncngb")
+material = ExtResource("5_ncngb")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Desk"]
+transform = Transform3D(-3.2565e-07, 0, -0.5, 0, 5, 0, 7.45, 0, -2.18557e-08, -3.5, 0, 3.25)
+material_override = ExtResource("5_ncngb")
+material = ExtResource("5_ncngb")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Desk"]
+transform = Transform3D(-3.2565e-07, 0, -0.5, 0, 5, 0, 7.45, 0, -2.18557e-08, 3.5, 0, 3.25)
+material_override = ExtResource("5_ncngb")
+material = ExtResource("5_ncngb")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 0.75, 0, -0.874576, -3.16702)
+visible = false
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21574, 0.679022, -2.66185)
+visible = false
+transparency = 0.5
+radius = 0.2
+material = ExtResource("7_6rk6r")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="CSGSphere3D"]
+light_energy = 0.1
+distance_fade_enabled = true
+distance_fade_begin = 1.0
+distance_fade_length = 5.0
+omni_attenuation = 0.217638
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("8_apnlx")
+
+[node name="enemy" parent="." node_paths=PackedStringArray("player", "patroll_targets") instance=ExtResource("9_3k58j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4748, 0, -9.91703)
+slide_on_ceiling = false
+player = NodePath("../Player")
+patroll_targets = [NodePath("../Hallway end")]
+use_enemy_variables = true
+remove_self = true
+
+[node name="Hallway end" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.107, -2.37213, -16.0525)
+
+[node name="Roof" type="MeshInstance3D" parent="."]
+transform = Transform3D(70, 0, 0, 0, -70, 1.05697e-05, 0, -1.05697e-05, -70, 0, 6.74238, 0)
+mesh = SubResource("PlaneMesh_wltdm")
+surface_material_override/0 = ExtResource("4_pcvlq")
+metadata/_edit_lock_ = true
+
+[node name="Roof light" parent="." instance=ExtResource("10_3bv84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.7602, 6.55335, -12.958)
+metadata/_edit_lock_ = true
+
+[node name="Roof light2" parent="." instance=ExtResource("10_3bv84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.4042, 6.553, -12.9569)
+metadata/_edit_lock_ = true
+
+[connection signal="running_sound" from="Player" to="enemy" method="_sound_played"]
+[connection signal="toggling_sound" from="Player" to="enemy" method="_sound_played"]
+[connection signal="screen_on" from="Computer/Screen" to="enemy" method="_sound_played"]
